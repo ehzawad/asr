@@ -21,3 +21,6 @@ SyslogIdentifier=jupyter-lab
 
 [Install]
 WantedBy=multi-user.target
+
+
+# journalctl -u jupyter.service -f
