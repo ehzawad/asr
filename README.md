@@ -1,1 +1,23 @@
 # asr
+
+
+[Unit]
+Description=Jupyter Lab Server
+After=network.target
+
+[Service]
+Type=simple
+User=ehzawad
+Group=ehzawad
+WorkingDirectory=/home/ehzawad/
+ExecStart=/home/ehzawad/torch_ehz_gcloud/bin/jupyter lab --ip=0.0.0.0 --no-browser --config=/home/ehzawad/.jupyter/jupyter_notebook_config.py
+Restart=on-failure
+RestartSec=10
+# Output to syslog
+StandardOutput=syslog
+StandardError=syslog
+# Specify the syslog identifier
+SyslogIdentifier=jupyter-lab
+
+[Install]
+WantedBy=multi-user.target
