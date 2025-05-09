@@ -24,3 +24,8 @@ WantedBy=multi-user.target
 
 
 # journalctl -u jupyter.service -f
+
+
+
+# clean environment: no NCCL_P2P_DISABLE
+torchrun --standalone --nproc_per_node=2 kaka.py
